@@ -1,32 +1,40 @@
+import React, {useState} from 'react';
 import 'aframe';
-import React from 'react';
-import {Sky, Text, Scene, Entity, Cursor, Camera} from 'react-aframe-ar';
+import {Animation, Cursor} from 'react-aframe-ar';
+import SceneOne from './components/SceneOne';
+import SceneTwo from './components/SceneTwo';
+import Common from './components/Common';
 
 function App() {
+	const [currentScene, setCurrentScene] = useState('SceneOne');
+
+	const changeScene = newScene => {
+		setCurrentScene(newScene);
+	};
+
 	return (
-		<Scene>
-			<Sky src='/img/entrance.jpg' rotation='0 -130 0' />
-
-			<Entity
-				geometry='primitive: plane; width: 1; height: 0.5;'
-				material='color: #4CC3D9;'
-				position='0 1 -3'
-				className='clickable'
-				events={{click: () => console.log('Botón clickeado!')}}
-			>
-				<Text value='Segunda escena' align='center' position='0 0 0.01' color='#7BC8A4' />
-			</Entity>
-
-			<Camera>
-				<Cursor
-					cursor='fuse: true;'
-					raycaster={{objects: '.clickable'}}
-					geometry='primitive: ring'
-				/>
-			</Camera>
-
-			<Text value='CODALTEC' align='center' position='0 1 -1.5' color='#7BC8A4' />
-		</Scene>
+		<>
+			<Common />
+			<SceneOne
+				visible={currentScene === 'SceneOne'}
+				changeScene={changeScene}
+				cursor={<Cursor />}
+			/>
+			<SceneTwo
+				visible={currentScene === 'SceneTwo'}
+				changeScene={changeScene}
+				cursor={<Cursor />}
+			/>
+			<Animation
+				attribute='scale'
+				dur='1000'
+				easing='ease-in-out'
+				fill='forwards'
+				from='0 0 0'
+				to='1 1 1'
+				play
+			></Animation>
+		</>
 	);
 }
 
