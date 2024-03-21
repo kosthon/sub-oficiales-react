@@ -1,7 +1,6 @@
 // SceneOne.js
 import React from 'react';
 import {Sky, Text, Entity} from 'react-aframe-ar';
-import Button from './Button';
 
 export default function SceneOne({visible, changeScene}) {
 	return (
@@ -19,15 +18,6 @@ export default function SceneOne({visible, changeScene}) {
 			>
 				<Text value='Check In' align='center' position='0 0 0.01' color='#000000' />
 			</Entity>
-
-			{/* <Button
-				text='Ir a Scene 2'
-				x='-1.5'
-				y='1'
-				z='-4'
-				className='scene2-button'
-				onClick={() => changeScene('SceneTwo')}
-			/> */}
 		</Entity>
 	);
 }
