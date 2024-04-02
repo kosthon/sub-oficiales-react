@@ -39,7 +39,7 @@ function App() {
 			/>
 			<Animation
 				attribute='scale'
-				dur='1000'
+				dur='500'
 				easing='ease-in-out'
 				fill='forwards'
 				from='0 0 0'

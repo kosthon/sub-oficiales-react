@@ -1,7 +1,8 @@
 import React from 'react';
-import {Sky, Text, Entity, Box} from 'react-aframe-ar';
+import { Sky, Text, Entity, Box } from 'react-aframe-ar';
 
-export default function SceneFour({visible, changeScene}) {
+export default function SceneFour({ visible, changeScene }) {
+
 	return (
 		<Entity id='SceneFour' visible={visible}>
 			<Sky src='/img/oratorio.jpg' rotation='0 -130 0' />
@@ -11,8 +12,8 @@ export default function SceneFour({visible, changeScene}) {
 				material='color: #000000;'
 				position='5 3 -5'
 				rotation='30 -35 1.8'
-				className='clickable'
-				events={{click: () => changeScene('SceneThree')}}
+				className={visible ? 'clickable' : ''}
+				events={{ click: () => changeScene('SceneThree') }}
 			>
 				<Text value='Check In' align='center' position='0 0 0.01' color='#FFFFFF' />
 			</Entity>
