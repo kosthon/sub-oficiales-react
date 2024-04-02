@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sky, Text, Entity, Box } from 'react-aframe-ar';
+import { Sky, Image, Entity, Box } from 'react-aframe-ar';
 
 export default function SceneThree({ visible, changeScene }) {
 	return (
@@ -7,7 +7,7 @@ export default function SceneThree({ visible, changeScene }) {
 			<Sky src='/img/checkIn.jpg' rotation='0 -130 0' />
 
 			<Entity
-				geometry='primitive: plane; width: 3; height: 0.5;'
+				geometry='primitive: plane; width: 1; height: 1;'
 				material='color: #000000;'
 				position="-3.89593 2.2 3.16747"
 				rotation="-1.93 125 0"
@@ -15,28 +15,28 @@ export default function SceneThree({ visible, changeScene }) {
 				className={visible ? 'clickable' : ''}
 				events={{ click: () => changeScene('SceneFour') }}
 			>
-				<Text value='Oratorio' align='center' position='0 0 0.01' color='#FFFFFF' />
+				<Image src="/img/Oratorio.png" width="1" height="1" position="0 0 0" />
 			</Entity>
 
 			<Box
-				position='-5 1.25 5'
+				position="-3.89593 1 3.16747"
 				scale='0.25 0.25 0.25'
 				color='red'
 				animation__postition="property: rotation; to: 0 360 0; dir: alternate; dur: 2000; loop: true;">
 			</Box>
 
 			<Entity
-				geometry='primitive: plane; width: 3; height: 0.5;'
+				geometry='primitive: plane; width: 1; height: 1;'
 				material='color: #000000;'
-				position='-5.5 0.5 -4.8'
+				position='-5.5 2.9 -8'
 				rotation='5.527896807422183 38.19107479224016 2.0139466498848435'
-				className='clickable'
+				className={visible ? 'clickable' : ''}
 				events={{ click: () => changeScene('SceneTwo') }}
 			>
-				<Text value='Salida 9' align='center' position='0 0 0.01' color='#FFFFFF' />
+				<Image src="/img/Salida.png" width="1" height="1" position="0 0 0" />
 			</Entity>
 			<Box
-				position='-5.5 -0.5 -4.8'
+				position='-5.5 1.8 -8'
 				scale='0.25 0.25 0.25'
 				color='red'
 				animation__postition="property: rotation; to: 0 360 0; dir: alternate; dur: 2000; loop: true;">

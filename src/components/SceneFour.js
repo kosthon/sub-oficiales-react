@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sky, Text, Entity, Box } from 'react-aframe-ar';
+import { Sky, Image, Entity, Box } from 'react-aframe-ar';
 
 export default function SceneFour({ visible, changeScene }) {
 
@@ -8,14 +8,14 @@ export default function SceneFour({ visible, changeScene }) {
 			<Sky src='/img/oratorio.jpg' rotation='0 -130 0' />
 
 			<Entity
-				geometry='primitive: plane; width: 3; height: 0.5;'
+				geometry='primitive: plane; width: 1; height: 1;'
 				material='color: #000000;'
 				position='5 3 -5'
 				rotation='30 -35 1.8'
 				className={visible ? 'clickable' : ''}
 				events={{ click: () => changeScene('SceneThree') }}
 			>
-				<Text value='Check In' align='center' position='0 0 0.01' color='#FFFFFF' />
+				<Image src="/img/Check_in.png" width="1" height="1" position="0 0 0" />
 			</Entity>
 			<Box
 				position='5 2.3 -5'
