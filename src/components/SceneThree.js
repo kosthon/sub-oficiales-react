@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sky, Text, Entity, Box, Image } from 'react-aframe-ar';
+import { Sky, Text, Entity, Box } from 'react-aframe-ar';
 
 export default function SceneThree({ visible, changeScene }) {
 	return (

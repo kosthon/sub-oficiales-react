@@ -1,6 +1,6 @@
 // En SceneOne.js
 import React, { useState } from 'react';
-import { Sky, Text, Entity, Box, Image } from 'react-aframe-ar';
+import { Sky, Text, Entity, Box } from 'react-aframe-ar';
 
 export default function SceneOne({ visible, changeScene }) {
 	const [visibleText, setVisibleText] = useState(false);
@@ -33,8 +33,7 @@ export default function SceneOne({ visible, changeScene }) {
 				className='clickable'
 				events={{ click: handleClick }}
 			>
-				<Image src="/img/ejemplo.png" width="2" height="2" position="0 0 0" />
-				{/* <Text value='¡Click Aca!' align='center' position='0 0 0.01' color='#FFFFFF' /> */}
+				<Text value='¡Click Aca!' align='center' position='0 0 0.01' color='#FFFFFF' />
 			</Entity>
 
 			<Entity
