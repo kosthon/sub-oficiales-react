@@ -1,28 +1,33 @@
 import React from 'react';
-import { Sky, Image, Entity, Box } from 'react-aframe-ar';
+import {Sky, Image, Entity} from 'react-aframe-ar';
 
-export default function SceneFour({ visible, changeScene }) {
-
+export default function SceneFour({visible, changeScene}) {
 	return (
 		<Entity id='SceneFour' visible={visible}>
 			<Sky src='/img/oratorio.jpg' rotation='0 -130 0' />
-
 			<Entity
-				geometry='primitive: plane; width: 1; height: 1;'
-				material='color: #000000;'
-				position='5 3 -5'
-				rotation='30 -35 1.8'
+				geometry='primitive: plane; width: 0.5; height: 0.5;'
+				material='transparent: true; visible: false'
+				position='2 0.5 -2.5'
+				rotation='0 -45 0'
+				events={{
+					mouseenter: e => {
+						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
+						e.target.setAttribute(
+							'animation__mouseenter',
+							'property: scale; to: 1.5 1.5 1.5; dur: 350; easing: linear;'
+						);
+					},
+					mouseleave: e => {
+						e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
+						e.target.removeAttribute('animation__mouseenter');
+					},
+					click: () => changeScene('SceneThree'),
+				}}
 				className={visible ? 'clickable' : ''}
-				events={{ click: () => changeScene('SceneThree') }}
 			>
-				<Image src="/img/Check_in.png" width="1" height="1" position="0 0 0" />
+				<Image src='/img/ArrowYw.png' width='0.5' height='0.5' position='0 0 0' />
 			</Entity>
-			<Box
-				position='5 2.3 -5'
-				scale='0.25 0.25 0.25'
-				color='red'
-				animation__postition="property: rotation; to: 0 360 0; dir: alternate; dur: 2000; loop: true;">
-			</Box>
 		</Entity>
 	);
 }
