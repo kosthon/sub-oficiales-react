@@ -29,14 +29,28 @@ export default function SceneOne({visible, changeScene}) {
 			<Sky src='/img/entrance.jpg' rotation='0 -130 0' />
 
 			<Entity
-				geometry='primitive: plane; width: 1; height: 1;'
-				position='-10 2.8 -4'
-				rotation='0 50 5'
+				geometry='primitive: plane; width: 0.5; height: 0.5;'
+				material='transparent: true; visible: false'
+				position='-3 2.4 2.4'
+				rotation='0 100 0'
 				className={visible ? 'clickable' : ''}
 				scale='1.13 1 0.04'
-				events={{click: handleOpenModal}}
+				events={{
+					mouseenter: e => {
+						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
+						e.target.setAttribute(
+							'animation__mouseenter',
+							'property: scale; to: 1.5 1.5 1.5; dur: 350; easing: linear;'
+						);
+					},
+					mouseleave: e => {
+						e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
+						e.target.removeAttribute('animation__mouseenter');
+					},
+					click: handleOpenModal,
+				}}
 			>
-				<Image src='/img/Salida.png' width='1' height='1' position='0 0 0' />
+				<Image src='/img/Options.png' width='0.5' height='0.5' position='0 0 0' />
 			</Entity>
 
 			<Entity

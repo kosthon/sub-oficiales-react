@@ -31,15 +31,12 @@ export default function SceneThree({visible, changeScene}) {
 			</Entity>
 
 			<Entity
-				geometry='primitive: plane; width: 1; height: 1;'
-				material='color: #000000;'
-				position='-5.5 2.9 -8'
-				rotation='5.527896807422183 38.19107479224016 2.0139466498848435'
-				className={visible ? 'clickable' : ''}
-				events={{click: () => changeScene('SceneTwo')}}
-			>
-				<Image src='/img/Salida.png' width='1' height='1' position='0 0 0' />
-			</Entity>
+				gltf-model='/models/plant.gltf'
+				position='-1 0 -1'
+				scale='1 1 1'
+				animation__postition='property: rotation; to: 0 3600 0; dir: alternate; dur: 7200; loop: true;'
+			/>
+
 			<Entity
 				geometry='primitive: plane; width: 0.5; height: 0.5;'
 				material='transparent: true; visible: false'
@@ -66,15 +63,3 @@ export default function SceneThree({visible, changeScene}) {
 		</Entity>
 	);
 }
-
-<a-entity
-	classname='clickable'
-	geometry='primitive: plane; width: 3; height: 0.5'
-	material='color: #000000'
-	position='-3.89593 2.2 3.16747'
-	rotation='-1.93 124.69648000000001 0'
-	scale='1 1 0.00001'
-	class='clickable'
->
-	<a-text value='Oratorio' align='center' position='0 0 0.01' color='#FFFFFF' text=''></a-text>
-</a-entity>;
