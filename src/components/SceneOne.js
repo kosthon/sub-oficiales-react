@@ -1,14 +1,15 @@
-import React, {useState, Suspense} from 'react';
+import React, { useState, Suspense } from 'react';
 
 import Modal from './Modal';
-import Plant from './Plant';
-import {Canvas} from '@react-three/fiber';
-import {Sky, Entity, Image} from 'react-aframe-ar';
-import {OrbitControls, Environment} from '@react-three/drei';
+import Plant from './ModelsComponents/Plant';
+import Gun from './ModelsComponents/Gun'
+import { Canvas } from '@react-three/fiber';
+import { Sky, Entity, Image } from 'react-aframe-ar';
+import { OrbitControls, Environment } from '@react-three/drei';
 
 import './styles/Models.css';
 
-export default function SceneOne({visible, changeScene}) {
+export default function SceneOne({ visible, changeScene }) {
 	const [modalOpen, setModalOpen] = useState(false);
 
 	const handleOpenModal = () => {
@@ -37,14 +38,14 @@ export default function SceneOne({visible, changeScene}) {
 				scale='1.13 1 0.04'
 				events={{
 					mouseenter: e => {
-						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
+						e.target.setAttribute('scale', { x: 1.2, y: 1.2, z: 1.2 });
 						e.target.setAttribute(
 							'animation__mouseenter',
 							'property: scale; to: 1.5 1.5 1.5; dur: 350; easing: linear;'
 						);
 					},
 					mouseleave: e => {
-						e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
+						e.target.setAttribute('scale', { x: 1, y: 1, z: 1 });
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: handleOpenModal,
@@ -60,14 +61,14 @@ export default function SceneOne({visible, changeScene}) {
 				rotation='-0 60 0'
 				events={{
 					mouseenter: e => {
-						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
+						e.target.setAttribute('scale', { x: 1.2, y: 1.2, z: 1.2 });
 						e.target.setAttribute(
 							'animation__mouseenter',
 							'property: scale; to: 1.5 1.5 1.5; dur: 350; easing: linear;'
 						);
 					},
 					mouseleave: e => {
-						e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
+						e.target.setAttribute('scale', { x: 1, y: 1, z: 1 });
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: handleSceneChange,
@@ -83,7 +84,7 @@ export default function SceneOne({visible, changeScene}) {
 						<ambientLight />
 						<OrbitControls />
 						<Suspense fallback={null}>
-							<Plant />
+							<Gun />
 						</Suspense>
 						<Environment preset='sunset' />
 					</Canvas>
