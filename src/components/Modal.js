@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { IoClose } from 'react-icons/io5';
+import React, {useState, useEffect} from 'react';
+import {IoClose} from 'react-icons/io5';
 import HashLoader from 'react-spinners/HashLoader';
 import './styles/Modal.css';
 
 // eslint-disable-next-line react/prop-types
-export default function Modal({ onClose, children }) {
+export default function Modal({onClose, children}) {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setLoading(false);
-		}, 2000);
+		}, 3500);
 		return () => clearTimeout(timer);
 	}, []);
 
@@ -25,14 +25,7 @@ export default function Modal({ onClose, children }) {
 	return (
 		<div className='modal-overlay' onClick={handleOverlayClick}>
 			<div className='modal-content'>
-				{loading ? (
-					<HashLoader color='#ffef00' size={100} />
-				) : (
-					<>
-						{children}
-
-					</>
-				)}
+				{loading ? <HashLoader color='#ffef00' size={100} /> : <>{children}</>}
 			</div>
 			<button className='modal-close' onClick={handleClose}>
 				<IoClose />

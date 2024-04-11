@@ -9,7 +9,8 @@ export default function Common() {
 				<Cursor
 					cursor='fuse: true;'
 					raycaster={{objects: '.clickable'}}
-					geometry='primitive: ring'
+					geometry='primitive: ring; '
+					color='#FFFFF'
 				/>
 			</Camera>
 		</>
