@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/gun-a66b52ede9af472a9a9e0946154d603c
 Title: Gun
 */
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {

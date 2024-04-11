@@ -7,7 +7,7 @@ Source: https://sketchfab.com/3d-models/sci-fi-smg-gun-free-442999342f5045948572
 Title: SCI-FI SMG GUN - FREE
 */
 
-import React, { useRef } from 'react'
+import React from 'react'
 import { useGLTF } from '@react-three/drei'
 
 export default function Model(props) {

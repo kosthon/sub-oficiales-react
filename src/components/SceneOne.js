@@ -1,7 +1,7 @@
 import React, { useState, Suspense } from 'react';
 
 import Modal from './Modal';
-import Plant from './ModelsComponents/Plant';
+// import Plant from './ModelsComponents/Plant';
 import Gun from './ModelsComponents/Gun'
 import { Canvas } from '@react-three/fiber';
 import { Sky, Entity, Image } from 'react-aframe-ar';
