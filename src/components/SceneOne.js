@@ -1,15 +1,15 @@
-import React, { useState, Suspense } from 'react';
+import React, {useState, Suspense} from 'react';
 
 import Modal from './Modal';
 // import Plant from './ModelsComponents/Plant';
-import Gun from './ModelsComponents/Gun'
-import { Canvas } from '@react-three/fiber';
-import { Sky, Entity, Image, Text } from 'react-aframe-ar';
-import { OrbitControls, Environment } from '@react-three/drei';
+import Gun from './ModelsComponents/Gun';
+import {Canvas} from '@react-three/fiber';
+import {Sky, Entity, Image, Text} from 'react-aframe-ar';
+import {OrbitControls, Environment} from '@react-three/drei';
 
 import './styles/Models.css';
 
-export default function SceneOne({ visible, changeScene }) {
+export default function SceneOne({visible, changeScene}) {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [modalOpenVideo, setModalOpenVideo] = useState(false);
 
@@ -46,14 +46,14 @@ export default function SceneOne({ visible, changeScene }) {
 				scale='1.13 1 0.04'
 				events={{
 					mouseenter: e => {
-						e.target.setAttribute('scale', { x: 1.2, y: 1.2, z: 1.2 });
+						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
 						e.target.setAttribute(
 							'animation__mouseenter',
 							'property: scale; to: 1.5 1.5 1.5; dur: 350; easing: linear;'
 						);
 					},
 					mouseleave: e => {
-						e.target.setAttribute('scale', { x: 1, y: 1, z: 1 });
+						e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: handleOpenModal,
@@ -69,12 +69,7 @@ export default function SceneOne({ visible, changeScene }) {
 				rotation='0 100 0'
 				scale='0.93 0.87 0.26'
 			>
-				<Text
-					value='MODELO'
-					align='center'
-					position='0 0 0.01'
-					color='#000000'
-				/>
+				<Text value='MODELO' align='center' position='0 0 0.01' color='#FFFFFF' />
 			</Entity>
 
 			<Entity
@@ -86,14 +81,14 @@ export default function SceneOne({ visible, changeScene }) {
 				scale='1.13 1 0.04'
 				events={{
 					mouseenter: e => {
-						e.target.setAttribute('scale', { x: 1.2, y: 1.2, z: 1.2 });
+						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
 						e.target.setAttribute(
 							'animation__mouseenter',
 							'property: scale; to: 1.5 1.5 1.5; dur: 350; easing: linear;'
 						);
 					},
 					mouseleave: e => {
-						e.target.setAttribute('scale', { x: 1, y: 1, z: 1 });
+						e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: handleOpenModalVideo,
@@ -108,12 +103,7 @@ export default function SceneOne({ visible, changeScene }) {
 				rotation='0 100 0'
 				scale='0.93 0.87 0.26'
 			>
-				<Text
-					value='VIDEO'
-					align='center'
-					position='0 0 0.01'
-					color='#000000'
-				/>
+				<Text value='VIDEO' align='center' position='0 0 0.01' color='#FFFFF' />
 			</Entity>
 
 			<Entity
@@ -123,14 +113,14 @@ export default function SceneOne({ visible, changeScene }) {
 				rotation='-0 60 0'
 				events={{
 					mouseenter: e => {
-						e.target.setAttribute('scale', { x: 1.2, y: 1.2, z: 1.2 });
+						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
 						e.target.setAttribute(
 							'animation__mouseenter',
 							'property: scale; to: 1.5 1.5 1.5; dur: 350; easing: linear;'
 						);
 					},
 					mouseleave: e => {
-						e.target.setAttribute('scale', { x: 1, y: 1, z: 1 });
+						e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: handleSceneChange,
@@ -143,6 +133,7 @@ export default function SceneOne({ visible, changeScene }) {
 			<Entity
 				gltf-model='/models/person/scene.gltf'
 				position='-7 0 1'
+				rotation='-15 0 0'
 				scale='2 2 2'
 				animation__postition='property: rotation; to: 0 3600 0; dir: alternate; dur: 50000; loop: true;'
 			/>
@@ -162,7 +153,16 @@ export default function SceneOne({ visible, changeScene }) {
 
 			{modalOpenVideo && (
 				<Modal onClose={handleCloseModalVideo}>
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/mWADuvOqbDk?si=g8FEAFHsIjllVye6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+					<iframe
+						width='560'
+						height='315'
+						src='https://www.youtube.com/embed/mWADuvOqbDk?si=g8FEAFHsIjllVye6'
+						title='YouTube video player'
+						frameborder='0'
+						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+						referrerpolicy='strict-origin-when-cross-origin'
+						allowfullscreen
+					></iframe>
 				</Modal>
 			)}
 		</Entity>
