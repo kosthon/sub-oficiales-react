@@ -35,7 +35,7 @@ export default function SceneOne({visible, changeScene}) {
 
 	return (
 		<Entity id='SceneOne' visible={visible}>
-			<Sky src='/img/entrance.jpg' rotation='0 -130 0' />
+			<Sky src='img/fotos 360 sedes/img2.jpg' rotation='0 -130 0' />
 
 			<Entity
 				geometry='primitive: plane; width: 0.5; height: 0.5;'
@@ -109,8 +109,9 @@ export default function SceneOne({visible, changeScene}) {
 			<Entity
 				geometry='primitive: plane; width: 0.5; height: 0.5;'
 				material='transparent: true; visible: false'
-				position='-4 0.2 -3'
-				rotation='-0 60 0'
+				position='-4 0.2 1.952'
+				rotation='19.137 73.553 15.199'
+				scale= '1.5 1.5 1.5 '
 				events={{
 					mouseenter: e => {
 						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
@@ -131,10 +132,10 @@ export default function SceneOne({visible, changeScene}) {
 			</Entity>
 
 			<Entity
-				gltf-model='/models/person/scene.gltf'
+				gltf-model='/models/soldier/scene.gltf'
 				position='-7 0 1'
-				rotation='-15 0 0'
-				scale='2 2 2'
+				rotation='1.295 -129.030 -0.518'
+				scale='1.3 1.3 1.3'
 				animation__postition='property: rotation; to: 0 3600 0; dir: alternate; dur: 50000; loop: true;'
 			/>
 
@@ -156,7 +157,7 @@ export default function SceneOne({visible, changeScene}) {
 					<iframe
 						width='560'
 						height='315'
-						src='https://www.youtube.com/embed/mWADuvOqbDk?si=g8FEAFHsIjllVye6'
+						src='https://www.youtube.com/embed/g1BGwm-_Klk?si=_N0kSXD08FeBfgK_'
 						title='YouTube video player'
 						frameborder='0'
 						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

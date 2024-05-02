@@ -4,12 +4,12 @@ import {Sky, Image, Entity} from 'react-aframe-ar';
 export default function SceneFour({visible, changeScene}) {
 	return (
 		<Entity id='SceneFour' visible={visible}>
-			<Sky src='/img/oratorio.jpg' rotation='0 -130 0' />
+			<Sky src='img/fotos 360 sedes/img4.jpg' rotation='0 -130 0' />
 			<Entity
 				geometry='primitive: plane; width: 0.5; height: 0.5;'
 				material='transparent: true; visible: false'
-				position='2 0.5 -2.5'
-				rotation='0 -45 0'
+				position='-1.200 0.5 2.990'
+				rotation='2.165 -176.868 -4.528'
 				events={{
 					mouseenter: e => {
 						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
