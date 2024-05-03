@@ -35,7 +35,7 @@ export default function SceneOne({visible, changeScene}) {
 
 	return (
 		<Entity id='SceneOne' visible={visible}>
-			<Sky src='/img/entrance.jpg' rotation='0 -130 0' />
+			<Sky src='/img/bolera/one.jpg' rotation='0 -130 0' />
 
 			<Entity
 				geometry='primitive: plane; width: 0.5; height: 0.5;'
@@ -109,25 +109,26 @@ export default function SceneOne({visible, changeScene}) {
 			<Entity
 				geometry='primitive: plane; width: 0.5; height: 0.5;'
 				material='transparent: true; visible: false'
-				position='-4 0.2 -3'
-				rotation='-0 60 0'
+				position='-5.260 2.662 -9.857'
+				rotation='0 -10 0'
+				scale='5 5 5'
 				events={{
 					mouseenter: e => {
-						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
+						e.target.setAttribute('scale', {x: 5.2, y: 5.2, z: 5.2});
 						e.target.setAttribute(
 							'animation__mouseenter',
-							'property: scale; to: 1.5 1.5 1.5; dur: 350; easing: linear;'
+							'property: scale; to: 5.5 5.5 5.5; dur: 350; easing: linear;'
 						);
 					},
 					mouseleave: e => {
-						e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
+						e.target.setAttribute('scale', {x: 5, y: 5, z: 5});
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: handleSceneChange,
 				}}
 				className={visible ? 'clickable' : ''}
 			>
-				<Image src='/img/ArrowYw.png' width='0.5' height='0.5' position='0 0 0' />
+				<Image src='/img/bolera/bolos.png' width='0.5' height='0.5' position='0 0 0' />
 			</Entity>
 
 			<Entity

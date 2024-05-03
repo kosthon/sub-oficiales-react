@@ -5,13 +5,13 @@ import {Sky, Entity, Image} from 'react-aframe-ar';
 export default function SceneTwo({visible, changeScene}) {
 	return (
 		<Entity id='SceneTwo' visible={visible}>
-			<Sky src='/img/salida9.jpg' rotation='0 -130 0' />
+			<Sky src='/img/bolera/two.jpg' rotation='0 -130 0' />
 
 			<Entity
 				geometry='primitive: plane; width: 0.5; height: 0.5;'
 				material='transparent: true; visible: false'
-				position='-4 0 0.5'
-				rotation='0 90 0'
+				position='-2.195 0 -3.258'
+				rotation='0 45.972 0'
 				events={{
 					mouseenter: e => {
 						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
