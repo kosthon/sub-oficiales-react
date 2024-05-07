@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import 'aframe';
-import {Animation, Cursor} from 'react-aframe-ar';
+import { Animation, Cursor } from 'react-aframe-ar';
 import SceneOne from './components/SceneOne';
 import SceneTwo from './components/SceneTwo';
 import SceneThree from './components/SceneThree';
