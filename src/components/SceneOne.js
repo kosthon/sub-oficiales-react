@@ -132,10 +132,10 @@ export default function SceneOne({visible, changeScene}) {
 			</Entity>
 
 			<Entity
-				gltf-model='/models/person/scene.gltf'
+				gltf-model='/models/soldier/scene.gltf'
 				position='-7 0 1'
-				rotation='-15 0 0'
-				scale='2 2 2'
+				rotation='2.887 124.187 2.375'
+				scale='1.5 1.5 1.5'
 				animation__postition='property: rotation; to: 0 3600 0; dir: alternate; dur: 50000; loop: true;'
 			/>
 
@@ -157,7 +157,7 @@ export default function SceneOne({visible, changeScene}) {
 					<iframe
 						width='560'
 						height='315'
-						src='https://www.youtube.com/embed/mWADuvOqbDk?si=g8FEAFHsIjllVye6'
+						src='https://www.youtube.com/embed/g1BGwm-_Klk?si=A8ZZ2Pg5SKgmt7dA'
 						title='YouTube video player'
 						frameborder='0'
 						allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'

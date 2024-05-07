@@ -23,7 +23,7 @@ export default function SceneFour({visible, changeScene}) {
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: () => changeScene('SceneTwo'),
-				}}
+				}} 	
 				className={visible ? 'clickable' : ''}
 			>
 				<Image src='/img/ArrowYw.png' width='0.5' height='0.5' position='0 0 0' />
