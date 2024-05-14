@@ -1,15 +1,15 @@
-import React, {useState, Suspense} from 'react';
+import React, { useState, Suspense } from 'react';
 
 import Modal from './Modal';
 // import Plant from './ModelsComponents/Plant';
 import Gun from './ModelsComponents/Gun';
-import {Canvas} from '@react-three/fiber';
-import {Sky, Entity, Image, Text} from 'react-aframe-ar';
-import {OrbitControls, Environment} from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { Sky, Entity, Image, Text } from 'react-aframe-ar';
+import { OrbitControls, Environment } from '@react-three/drei';
 
 import './styles/Models.css';
 
-export default function SceneOne({visible, changeScene}) {
+export default function SceneOne({ visible, changeScene }) {
 	const [modalOpen, setModalOpen] = useState(false);
 	const [modalOpenVideo, setModalOpenVideo] = useState(false);
 
@@ -46,14 +46,14 @@ export default function SceneOne({visible, changeScene}) {
 				scale='1.13 1 0.04'
 				events={{
 					mouseenter: e => {
-						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
+						e.target.setAttribute('scale', { x: 1.2, y: 1.2, z: 1.2 });
 						e.target.setAttribute(
 							'animation__mouseenter',
 							'property: scale; to: 1.5 1.5 1.5; dur: 350; easing: linear;'
 						);
 					},
 					mouseleave: e => {
-						e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
+						e.target.setAttribute('scale', { x: 1, y: 1, z: 1 });
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: handleOpenModal,
@@ -69,7 +69,7 @@ export default function SceneOne({visible, changeScene}) {
 				rotation='0 100 0'
 				scale='0.93 0.87 0.26'
 			>
-				<Text value='MODELO' align='center' position='0 0 0.01' color='#FFFFFF' />
+				<Text value='MODELO' align='center' font='https://cdn.aframe.io/fonts/Monoid.fnt' position='0 0 0.01' color='#FFFFFF' />
 			</Entity>
 
 			<Entity
@@ -81,14 +81,14 @@ export default function SceneOne({visible, changeScene}) {
 				scale='1.13 1 0.04'
 				events={{
 					mouseenter: e => {
-						e.target.setAttribute('scale', {x: 1.2, y: 1.2, z: 1.2});
+						e.target.setAttribute('scale', { x: 1.2, y: 1.2, z: 1.2 });
 						e.target.setAttribute(
 							'animation__mouseenter',
 							'property: scale; to: 1.5 1.5 1.5; dur: 350; easing: linear;'
 						);
 					},
 					mouseleave: e => {
-						e.target.setAttribute('scale', {x: 1, y: 1, z: 1});
+						e.target.setAttribute('scale', { x: 1, y: 1, z: 1 });
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: handleOpenModalVideo,
@@ -103,7 +103,7 @@ export default function SceneOne({visible, changeScene}) {
 				rotation='0 100 0'
 				scale='0.93 0.87 0.26'
 			>
-				<Text value='VIDEO' align='center' position='0 0 0.01' color='#FFFFF' />
+				<Text value='VIDEO' align='center' font='https://cdn.aframe.io/fonts/Monoid.fnt' position='0 0 0.01' color='#FFFFF' />
 			</Entity>
 
 			<Entity
@@ -114,14 +114,14 @@ export default function SceneOne({visible, changeScene}) {
 				scale='5 5 5'
 				events={{
 					mouseenter: e => {
-						e.target.setAttribute('scale', {x: 5.2, y: 5.2, z: 5.2});
+						e.target.setAttribute('scale', { x: 5.2, y: 5.2, z: 5.2 });
 						e.target.setAttribute(
 							'animation__mouseenter',
 							'property: scale; to: 5.5 5.5 5.5; dur: 350; easing: linear;'
 						);
 					},
 					mouseleave: e => {
-						e.target.setAttribute('scale', {x: 5, y: 5, z: 5});
+						e.target.setAttribute('scale', { x: 5, y: 5, z: 5 });
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: handleSceneChange,
