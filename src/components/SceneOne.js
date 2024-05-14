@@ -109,7 +109,7 @@ export default function SceneOne({visible, changeScene}) {
 			<Entity
 				geometry='primitive: plane; width: 0.5; height: 0.5;'
 				material='transparent: true; visible: false'
-				position='-5.260 2.662 -9.857'
+				position='-3.911 1.454 -9.857'
 				rotation='0 -10 0'
 				scale='5 5 5'
 				events={{
