@@ -35,7 +35,7 @@ export default function SceneOne({ visible, changeScene }) {
 
 	return (
 		<Entity id='SceneOne' visible={visible}>
-			<Sky src='/img/bolera/one.jpg' rotation='0 -130 0' />
+			<Sky src='/img/paraiso/entrada.jpg' rotation='0 -150 0' />
 
 			<Entity
 				geometry='primitive: plane; width: 0.5; height: 0.5;'
@@ -109,31 +109,31 @@ export default function SceneOne({ visible, changeScene }) {
 			<Entity
 				geometry='primitive: plane; width: 0.5; height: 0.5;'
 				material='transparent: true; visible: false'
-				position='-3.911 1.454 -9.857'
-				rotation='0 -10 0'
-				scale='5 5 5'
+				position='-8.673 -1.159 1.945'
+				rotation='0 81.404 0'
+				scale = '2 2 2'
 				events={{
 					mouseenter: e => {
-						e.target.setAttribute('scale', { x: 5.2, y: 5.2, z: 5.2 });
+						e.target.setAttribute('scale', { x: 2.2, y: 2.2, z: 2.2 });
 						e.target.setAttribute(
 							'animation__mouseenter',
-							'property: scale; to: 5.5 5.5 5.5; dur: 350; easing: linear;'
+							'property: scale; to: 2.5 2.5 2.5; dur: 350; easing: linear;'
 						);
 					},
 					mouseleave: e => {
-						e.target.setAttribute('scale', { x: 5, y: 5, z: 5 });
+						e.target.setAttribute('scale', { x: 2, y: 2, z: 2 });
 						e.target.removeAttribute('animation__mouseenter');
 					},
 					click: handleSceneChange,
 				}}
 				className={visible ? 'clickable' : ''}
 			>
-				<Image src='/img/bolera/bolos.png' width='0.5' height='0.5' position='0 0 0' />
+				<Image src='/img/ArrowYw.png' width='0.5' height='0.5' position='0 0 0' />
 			</Entity>
 
 			<Entity
 				gltf-model='/models/soldier/scene.gltf'
-				position='-7 0 1'
+				position='-7.000 -1.265 -1.295'
 				rotation='2.887 124.187 2.375'
 				scale='1.5 1.5 1.5'
 				animation__postition='property: rotation; to: 0 3600 0; dir: alternate; dur: 50000; loop: true;'
